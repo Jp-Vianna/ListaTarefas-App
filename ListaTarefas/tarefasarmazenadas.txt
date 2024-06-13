@@ -1,0 +1,5 @@
+Dormir1
+Acordar1
+Limpar sala0
+Estudar0
+Treinar0
