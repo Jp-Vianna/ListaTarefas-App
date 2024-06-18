@@ -70,6 +70,7 @@ class ListaTarefas(ft.Column):
 
         self.filtro = ft.Tabs(
             selected_index=0,
+            tab_alignment=ft.TabAlignment.CENTER,
             on_change=self.filtro_mudou,
             tabs=[ft.Tab(text="Todas"), ft.Tab(text="A fazer"), ft.Tab(text="Finalizadas")],
         )
@@ -205,17 +206,21 @@ def substitui_linha_arquivo(novo_texto, velho_texto):
 def main(pagina: ft.Page):
     # Título do app.
     pagina.title = "Lista de tarefas"
-    # Tamanho da página.
-    pagina.window_height = 500
-    pagina.window_width = 400
 
-    pagina.update()
+    # Tamanho da página.
+    pagina.window_height = 600
+    pagina.window_width = 650
+
+    # Adiciona scroll ao app.
+    pagina.scroll = "ALWAYS"
 
     # Inicia aplicativo.
     lista_tarefas = ListaTarefas()
 
     # Mostra interface.
     pagina.add(lista_tarefas)
+
+    pagina.update()
 
 
 ft.app(target=main)
